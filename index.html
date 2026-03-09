@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clements Tours | Private Duo Adventure in Sri Lanka</title>
+    <title>Peacock Travels | Private Duo Adventure in Sri Lanka</title>
     <meta name="description"
-        content="Experience the ultimate private 7-day adventure tour in Sri Lanka, exclusively designed for two. Self-driven transport, safaris, luxury camping, and more.">
+        content="Experience the ultimate private 7-day wild adventure tour in Sri Lanka, exclusively designed for two. Self-driven transport, safaris, premium camping, and more.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Clements <span>Tours</span></div>
+        <div class="logo">Peacock <span>Travels</span></div>
         <ul class="nav-links">
             <li><a href="#about">The Experience</a></li>
             <li><a href="#itinerary">Itinerary</a></li>
@@ -33,14 +33,40 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
+    <section class="hero" id="home">
+        <!-- Carousel Container -->
+        <div class="carousel">
+            <div class="carousel-slide active" style="background-image: url('assets/udawalawejeep.jpg');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/hawagala.jpg');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/nine_arch.jpg');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('assets/lanka_ella_falls.webp');">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+        <button class="carousel-btn next-btn" aria-label="Next Slide">&#10095;</button>
+
         <div class="hero-content">
             <h2 class="subtitle">Sri Lanka</h2>
-            <h1 class="title">The Ultimate Duo Adventure</h1>
+            <h1 class="title">The Duo Adventure</h1>
             <p class="description">An exclusive 7-day private journey for two. Self-driven exploration, wildlife
-                safaris, premium camping, and luxury stays.</p>
+                safaris, wild camping, and untamed nature.</p>
             <a href="#about" class="btn btn-primary btn-large">Discover The Itinerary</a>
+        </div>
+
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
         </div>
     </section>
 
@@ -52,7 +78,7 @@
                     <h4 class="section-subtitle">Our Concept</h4>
                     <h2 class="section-title">Designed Exclusively For Two</h2>
                     <p>Forget crowded group tours, unreliable public transport, or the stress of booking everything
-                        yourself. Clements Tours specializes in a private, 7-day immersive adventure built specifically
+                        yourself. Peacock Travels specializes in a private, 7-day immersive adventure built specifically
                         for couples, best friends, siblings, or travel partners.</p>
                     <p>We provide a premium, self-driven experience where we take the wheel, and you simply sit back and
                         enjoy the ride in a comfortable Toyota Axio. From luxury homestays to exclusive camping under
@@ -66,7 +92,7 @@
                     </ul>
                 </div>
                 <div class="about-image scroll-reveal">
-                    <img src="assets/drone_beach.png" alt="Couple walking on an exclusive Sri Lankan beach">
+                    <img src="assets/udawalawejeep.jpg" alt="Safari jeep adventure in Udawalawe">
                     <div class="image-accent"></div>
                 </div>
             </div>
@@ -133,7 +159,7 @@
                         <p><strong>Location:</strong> Negombo / Kandana</p>
                         <p>Airport pickup and transfer to our comfortable homestay. Rest, recover, and gear up for the
                             adventure ahead. Your private vehicle will be waiting for you here.</p>
-                        <img src="assets/toyota_axio_homestay.png" alt="Toyota Axio at homestay">
+                        <img src="assets/image.png" alt="Toyota Axio at homestay">
                     </div>
                 </div>
 
@@ -145,7 +171,7 @@
                         <p><strong>Location:</strong> Ratnapura</p>
                         <p>Dive into Sri Lanka's famous gem industry. We will visit active gem mines, observe
                             traditional cutting and polishing, and explore an exclusive gem museum.</p>
-                        <img src="assets/gem_museum.png" alt="Sapphires in Ratnapura Gem Museum">
+                        <img src="assets/gem_museam.jpg" alt="Sapphires in Ratnapura Gem Museum">
                     </div>
                 </div>
 
@@ -156,9 +182,10 @@
                         <h3>Wild Safaris & Starry Nights</h3>
                         <p><strong>Location:</strong> Udawalawe</p>
                         <p>Morning safari in Udawalawe National Park, visit the Elephant Transit Home, hike the scenic
-                            Hawagala, and end the day with premium outdoor camping and food prepared by our team.</p>
-                        <img src="assets/safari_elephants.png" alt="Udawalawe Safari">
-                        <img src="assets/premium_camping.png" alt="Premium Camping" style="margin-top: 10px;">
+                            Hawagala mountain, and end the day with wild outdoor camping and food prepared by our team.
+                        </p>
+                        <img src="assets/hawagala.jpg" alt="Scenic Hawagala Mountain">
+                        <img src="assets/camping_tent.jpg" alt="Rugged Adventure Camping" style="margin-top: 10px;">
                     </div>
                 </div>
 
@@ -168,9 +195,12 @@
                         <div class="timeline-date">Day 4</div>
                         <h3>The Hill Country</h3>
                         <p><strong>Location:</strong> Ella</p>
-                        <p>Experience the world-renowned scenic train ride. Visit the iconic Nine Arch Bridge, bathe in
-                            Ravana Falls, and experience the spiritual calm of a local mountain temple.</p>
-                        <img src="assets/ella_train.png" alt="Ella Train Journey">
+                        <p>Experience the world-renowned scenic train ride. Visit the iconic Nine Arch Bridge, see the
+                            majestic
+                            Ravana Falls (viewing only, no bathing), and experience the spiritual calm of a local
+                            mountain temple.</p>
+                        <img src="assets/ella_train.jpg" alt="Ella Train Journey">
+                        <img src="assets/nine_arch.jpg" alt="Nine Arch Bridge" style="margin-top: 10px;">
                     </div>
                 </div>
 
@@ -180,8 +210,10 @@
                         <div class="timeline-date">Day 5</div>
                         <h3>Trails & Waterfalls</h3>
                         <p><strong>Location:</strong> Horton Plains to Ratnapura</p>
-                        <p>Trek to the dramatic World's End drop-off. Visit Sri Lanka's tallest waterfall, Bambarakanda.
+                        <p>Trek through the misty Horton Plains to the dramatic World's End drop-off. Visit Sri Lanka's
+                            tallest waterfall, Bambarakanda, and the beautiful Lanka Ella falls.
                             We will then head back to Ratnapura for an overnight stay.</p>
+                        <img src="assets/lanka_ella_falls.webp" alt="Lanka Ella Falls">
                     </div>
                 </div>
 
@@ -191,8 +223,9 @@
                         <div class="timeline-date">Day 6</div>
                         <h3>Urban Exploration & Sunset</h3>
                         <p><strong>Location:</strong> Colombo</p>
-                        <p>Explore the vibrant capital. Ascend the Lotus Tower, visit the modern Port City, walk through
-                            the bustling Pettah Market, and relax at Mount Lavinia Beach at sunset.</p>
+                        <p>Explore the vibrant capital. Walk through the bustling Pettah Market, admire the Red Mosque,
+                            visit the modern Port City, and relax at Mount Lavinia Beach at sunset.</p>
+                        <img src="assets/petaah_mosque.jpg" alt="Pettah Red Mosque">
                     </div>
                 </div>
 
@@ -204,6 +237,7 @@
                         <p><strong>Location:</strong> Negombo Beach -> Airport</p>
                         <p>A final morning stroll along Negombo beach before we drop you safely at the airport,
                             concluding your private duo adventure.</p>
+                        <img src="assets/negombo_sunset_boat.jpg" alt="Negombo Sunset Boat">
                     </div>
                 </div>
 
@@ -220,36 +254,54 @@
             </div>
 
             <div class="gallery-grid">
-                <div class="gallery-item scroll-reveal"><img src="assets/safari_elephants.png"
-                        alt="Elephants in Safari"></div>
-                <div class="gallery-item scroll-reveal"><img src="assets/ella_train.png" alt="Train Journey"></div>
-                <div class="gallery-item scroll-reveal"><img src="assets/premium_camping.png" alt="Camping Setup"></div>
-                <div class="gallery-item scroll-reveal"><img src="assets/gem_museum.png" alt="Precious Gems"></div>
-                <div class="gallery-item scroll-reveal"><img src="assets/drone_beach.png" alt="Beach Aerial"></div>
-                <div class="gallery-item scroll-reveal"><img src="assets/toyota_axio_homestay.png" alt="Luxury Travel">
+                <div class="gallery-item scroll-reveal"><img src="assets/udawalawejeep.jpg" alt="Elephants in Safari">
+                </div>
+                <div class="gallery-item scroll-reveal"><img src="assets/ella_train.jpg" alt="Train Journey"></div>
+                <div class="gallery-item scroll-reveal"><img src="assets/camping_tent.jpg" alt="Camping Setup"></div>
+                <div class="gallery-item scroll-reveal"><img src="assets/gem_museam.jpg" alt="Precious Gems"></div>
+                <div class="gallery-item scroll-reveal"><img src="assets/petaah_mosque.jpg" alt="Pettah"></div>
+                <div class="gallery-item scroll-reveal"><img src="assets/nine_arch.jpg" alt="Adventure Travel">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer & Booking -->
-    <footer id="booking" class="footer">
-        <div class="footer-overlay"></div>
-        <div class="container footer-content scroll-reveal">
-            <h2>Ready for the Journey?</h2>
-            <p>Secure your exclusive 7-day Sri Lankan adventure.</p>
-            <div class="contact-info">
-                <p>Limited slots. Only 2 travelers per tour.</p>
-                <p>Total Package: <strong>400,000 LKR</strong> (40% required to book)</p>
+    <!-- Booking Section -->
+    <section id="booking" class="booking py-section">
+        <div class="booking-overlay"></div>
+        <div class="container booking-content scroll-reveal">
+            <h4 class="section-subtitle">Start Your Journey</h4>
+            <h2 class="section-title">Ready for Your Next Duo Adventure?</h2>
+            <p class="booking-description">Secure your exclusive private 7-day tour. Experience the untamed beauty of
+                Sri Lanka, crafted specifically for two.</p>
+
+            <div class="booking-actions">
+                <a href="https://wa.me/your-number-here" class="btn btn-whatsapp btn-book-now" target="_blank">
+                    Book Now on WhatsApp
+                </a>
             </div>
-            <div class="social-links">
-                <a href="#" class="btn btn-primary">DM Us on Instagram</a>
-                <a href="#" class="btn btn-primary"
-                    style="background: transparent; border: 2px solid var(--color-accent-gold); color: var(--color-accent-gold)">View
-                    on Airbnb</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Peacock <span>Travels</span></div>
+                    <p>Wild. Private. Unforgettable.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Experience</a></li>
+                        <li><a href="#itinerary">Itinerary</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 Clements Tours. All rights reserved. Sri Lanka.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Peacock Travels. All rights reserved. Sri Lanka.</p>
             </div>
         </div>
     </footer>

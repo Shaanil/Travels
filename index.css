@@ -1,20 +1,20 @@
 :root {
-    /* Color Palette */
-    --color-bg-dark: #1e242a;
-    /* Slightly warmer dark grey */
-    --color-bg-light: #fdfbf7;
-    /* Warm off-white */
-    --color-accent-gold: #c38d4f;
-    /* Earthy warm gold/orange */
-    --color-accent-hover: #b07c3f;
-    --color-text-main: #f1f5f9;
-    --color-text-muted: #cbd5e1;
-    --color-dark-card: #2a313a;
-    /* Dark warm card */
-    --color-dark-nav: rgba(30, 36, 42, 0.9);
+    /* Color Palette - Adventure Theme */
+    --color-bg-dark: #1F2922;
+    /* Deep forest green / dark earthy tone */
+    --color-bg-light: #F4F1EA;
+    /* Sand / Canvas */
+    --color-accent-gold: #D4A373;
+    /* Earthy wood / desert sand */
+    --color-accent-hover: #C58A51;
+    --color-text-main: #E8EBE9;
+    --color-text-muted: #A3B1AA;
+    --color-dark-card: #2B3A30;
+    /* Darker green */
+    --color-dark-nav: rgba(31, 41, 34, 0.95);
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Outfit', sans-serif;
     --font-body: 'Outfit', sans-serif;
 
     /* Spacing */
@@ -168,11 +168,36 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* We'll set the background image via JS or inline to ensure path is correct */
-    background-image: url('assets/safari_elephants.png');
+    overflow: hidden;
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+    transform: scale(1.05);
+    /* Slight zoom for dynamic feel */
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -181,8 +206,62 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(31, 41, 34, 0.9) 100%);
     z-index: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition-smooth);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-btn:hover {
+    background: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.indicator.active {
+    background: var(--color-accent-gold);
+    width: 35px;
+    border-radius: 6px;
 }
 
 .hero-content {
@@ -525,6 +604,45 @@ a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Gallery Section --- */
+.gallery {
+    background-color: var(--color-bg-dark);
+    position: relative;
+}
+
+.gallery .section-title {
+    color: var(--color-text-main);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 4/3;
+    border: 1px solid rgba(212, 163, 115, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+    filter: brightness(0.8) contrast(1.1) saturate(1.1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.0) saturate(1.2);
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .about-grid {
@@ -539,6 +657,200 @@ a {
     }
 
     .hero .title {
+        font-size: 3.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .pricing-body {
+        padding: 2rem;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding: 2rem 0 2rem 60px;
+    }
+
+    .timeline-dot {
+        left: 10px;
+    }
+
+    .carousel-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 0 40px;
+        /* Make space for carousel buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .title {
+        font-size: 2.5rem;
+    }
+
+    .price .amount {
         font-size: 3rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .carousel-btn {
+        display: none;
+        /* Hide side arrows on very small screens, rely on indicators/swipes */
+    }
+
+    .btn-large {
+        padding: 1rem 2rem;
+    }
+}
+
+/* --- Booking Section --- */
+.booking {
+    position: relative;
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    background-image: url('assets/udawalawejeep.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.booking-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(31, 41, 34, 0.8), rgba(31, 41, 34, 0.95));
+    z-index: 1;
+}
+
+.booking-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking .section-subtitle {
+    color: var(--color-accent-gold) !important;
+}
+
+.booking-description {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.btn-book-now {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+    padding: 1.5rem 4rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 15px 30px rgba(212, 163, 115, 0.3);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.btn-book-now:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.4);
+}
+
+/* --- Footer Redesign --- */
+.footer {
+    background-color: #161D18;
+    /* Darker than main bg */
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand .logo {
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    .booking-details {
+        gap: 1.5rem;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
