@@ -727,7 +727,7 @@ a {
     position: relative;
     padding: var(--spacing-xxl) 0;
     text-align: center;
-    background-image: url('assets/udawalawejeep.jpg');
+    background-image: url('assets/gallery/train.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
